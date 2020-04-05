@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/mapbox-task/static/css/main.d1e39dbb.chunk.css",
+    "main.js": "/mapbox-task/static/js/main.54b920fd.chunk.js",
+    "main.js.map": "/mapbox-task/static/js/main.54b920fd.chunk.js.map",
+    "runtime-main.js": "/mapbox-task/static/js/runtime-main.6a443ef7.js",
+    "runtime-main.js.map": "/mapbox-task/static/js/runtime-main.6a443ef7.js.map",
+    "static/js/2.d7e526b2.chunk.js": "/mapbox-task/static/js/2.d7e526b2.chunk.js",
+    "static/js/2.d7e526b2.chunk.js.map": "/mapbox-task/static/js/2.d7e526b2.chunk.js.map",
+    "index.html": "/mapbox-task/index.html",
+    "precache-manifest.146752426e8188e05b9ac1e929edc438.js": "/mapbox-task/precache-manifest.146752426e8188e05b9ac1e929edc438.js",
+    "service-worker.js": "/mapbox-task/service-worker.js",
+    "static/css/main.d1e39dbb.chunk.css.map": "/mapbox-task/static/css/main.d1e39dbb.chunk.css.map",
+    "static/js/2.d7e526b2.chunk.js.LICENSE.txt": "/mapbox-task/static/js/2.d7e526b2.chunk.js.LICENSE.txt",
+    "static/media/now-ui-kit.min.css": "/mapbox-task/static/media/nucleo-outline.8ebec31f.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6a443ef7.js",
+    "static/js/2.d7e526b2.chunk.js",
+    "static/css/main.d1e39dbb.chunk.css",
+    "static/js/main.54b920fd.chunk.js"
+  ]
+}
