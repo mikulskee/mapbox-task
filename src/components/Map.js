@@ -6,7 +6,7 @@ const Map = () => {
   const { markers, setMarkers } = useContext(MarkersContext);
   const [viewport, setViewport] = useState({
     width: "100%",
-    height: "400px",
+    height: "50vh",
     latitude: 37.7577,
     longitude: -122.4376,
     zoom: 8,
@@ -19,7 +19,7 @@ const Map = () => {
       console.log(crd.latitude);
       setViewport({
         width: "100%",
-        height: "400px",
+        height: "50vh",
         latitude: crd.latitude,
         longitude: crd.longitude,
         zoom: 10,
@@ -54,8 +54,16 @@ const Map = () => {
       }}
     >
       {markers.map((marker) => (
-        <Marker key={marker.id} latitude={marker.lat} longitude={marker.long}>
-          <div>place</div>
+        <Marker
+          className={`marker-${marker.id}`}
+          key={marker.id}
+          latitude={marker.lat}
+          longitude={marker.long}
+        >
+          <div className="marker">
+            <h6 className="h6">{markers.indexOf(marker) + 1}</h6>
+            <i className="now-ui-icons location_pin"></i>
+          </div>
         </Marker>
       ))}
     </ReactMapGl>

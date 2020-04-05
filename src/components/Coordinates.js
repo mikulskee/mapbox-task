@@ -8,8 +8,15 @@ const Coordinates = () => {
   return (
     <ListGroup>
       {markers.map((marker) => (
-        <ListGroupItem key={marker.id}>
-          Lat: {marker.lat.toFixed(4)} Long: {marker.long.toFixed(4)}
+        <ListGroupItem key={marker.id} className="coordinates" id={marker.id}>
+          <strong>{markers.indexOf(marker) + 1}.</strong> Lat:{" "}
+          {marker.lat.toFixed(4)} Long: {marker.long.toFixed(4)}
+          <button
+            class="btn btn-primary btn-icon btn-round btn-sm"
+            type="button"
+          >
+            <i className="now-ui-icons ui-1_simple-remove danger"></i>
+          </button>
         </ListGroupItem>
       ))}
     </ListGroup>

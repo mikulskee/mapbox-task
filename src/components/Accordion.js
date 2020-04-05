@@ -1,10 +1,12 @@
-import React from "react";
-import { UncontrolledCollapse, Alert } from "reactstrap";
+import React, { useContext } from "react";
+import { UncontrolledCollapse, Alert, Badge } from "reactstrap";
 
 import Map from "./Map";
 import Coordinates from "./Coordinates";
+import { MarkersContext } from "../contexts/MarkersContext";
 
 const Accordion = () => {
+  const { markers } = useContext(MarkersContext);
   return (
     <>
       <div className="item">
@@ -14,7 +16,9 @@ const Accordion = () => {
           id="exampleAccordion1"
           onClick={(e) => e.preventDefault()}
         >
-          <h3 className="h3">Map</h3>
+          <h3 className="h3">
+            Map <i className="now-ui-icons arrows-1_minimal-down"></i>
+          </h3>
         </Alert>
         <UncontrolledCollapse
           role="tabpanel"
@@ -31,7 +35,10 @@ const Accordion = () => {
           id="exampleAccordion2"
           onClick={(e) => e.preventDefault()}
         >
-          <h3 className="h3">Coordinates</h3>
+          <h3 className="h3">
+            Coordinates <Badge color="default">{markers.length}</Badge>
+            <i className="now-ui-icons arrows-1_minimal-down"></i>
+          </h3>
         </Alert>
         <UncontrolledCollapse role="tabpanel" toggler="#exampleAccordion2">
           <Coordinates />
