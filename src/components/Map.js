@@ -15,8 +15,6 @@ const Map = () => {
   useEffect(() => {
     const success = (pos) => {
       const crd = pos.coords;
-
-      console.log(crd.latitude);
       setViewport({
         width: "100%",
         height: "50vh",
@@ -45,12 +43,10 @@ const Map = () => {
       mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
       onViewportChange={setViewport}
       onClick={(e) => {
-        console.log(e);
         const obj = { ...e.lngLat, id: e.timeStamp };
         renameKey(obj, "0", "long");
         renameKey(obj, "1", "lat");
         setMarkers([...markers, obj]);
-        console.log(markers);
       }}
     >
       {markers.map((marker) => (

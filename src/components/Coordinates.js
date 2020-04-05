@@ -3,7 +3,12 @@ import { ListGroup, ListGroupItem } from "reactstrap";
 import { MarkersContext } from "../contexts/MarkersContext";
 
 const Coordinates = () => {
-  const { markers } = useContext(MarkersContext);
+  const { markers, setMarkers } = useContext(MarkersContext);
+
+  const handleRemove = (id) => {
+    const newArrayOfMarkers = markers.filter((marker) => marker.id !== id);
+    setMarkers(newArrayOfMarkers);
+  };
 
   return (
     <ListGroup>
@@ -14,6 +19,7 @@ const Coordinates = () => {
           <button
             className="btn btn-primary btn-icon btn-round btn-sm"
             type="button"
+            onClick={() => handleRemove(marker.id)}
           >
             <i className="now-ui-icons ui-1_simple-remove danger"></i>
           </button>
