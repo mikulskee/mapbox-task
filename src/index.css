@@ -39,3 +39,15 @@ body {
 .coordinates button {
   margin-left: 10px;
 }
+
+.animation-arrow {
+  margin-left: 10px;
+  transition: transform 0.25s ease-in-out;
+}
+.animation-arrow.active {
+  transform: rotateX(180deg);
+}
+
+.pointer-events-none {
+  pointer-events: none;
+}

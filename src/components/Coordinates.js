@@ -12,7 +12,7 @@ const Coordinates = () => {
           <strong>{markers.indexOf(marker) + 1}.</strong> Lat:{" "}
           {marker.lat.toFixed(4)} Long: {marker.long.toFixed(4)}
           <button
-            class="btn btn-primary btn-icon btn-round btn-sm"
+            className="btn btn-primary btn-icon btn-round btn-sm"
             type="button"
           >
             <i className="now-ui-icons ui-1_simple-remove danger"></i>
