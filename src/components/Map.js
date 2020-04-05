@@ -1,16 +1,19 @@
-import React, { useState, useEffect, useContext } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useContext } from "react";
 import { MarkersContext } from "../contexts/MarkersContext";
+import { MapContext } from "../contexts/MapContext";
 import ReactMapGl, { Marker } from "react-map-gl";
 
 const Map = () => {
   const { markers, setMarkers } = useContext(MarkersContext);
-  const [viewport, setViewport] = useState({
-    width: "100%",
-    height: "50vh",
-    latitude: 37.7577,
-    longitude: -122.4376,
-    zoom: 8,
-  });
+  const { viewport, setViewport } = useContext(MapContext);
+  // const [viewport, setViewport] = useState({
+  //   width: "100%",
+  //   height: "50vh",
+  //   latitude: 37.7577,
+  //   longitude: -122.4376,
+  //   zoom: 8,
+  // });
 
   useEffect(() => {
     const success = (pos) => {
@@ -39,6 +42,7 @@ const Map = () => {
 
   return (
     <ReactMapGl
+      className="map-container"
       {...viewport}
       mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
       onViewportChange={setViewport}
