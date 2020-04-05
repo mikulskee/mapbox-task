@@ -33,15 +33,15 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -100%);
-  color: black;
-  fill: blanchedalmond;
+  color: red;
+  font-weight: bolder;
 }
 .marker .h6 {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(80%, -200%);
-  color: black;
+  color: red;
 }
 
 .coordinates button {

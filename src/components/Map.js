@@ -7,13 +7,6 @@ import ReactMapGl, { Marker } from "react-map-gl";
 const Map = () => {
   const { markers, setMarkers } = useContext(MarkersContext);
   const { viewport, setViewport } = useContext(MapContext);
-  // const [viewport, setViewport] = useState({
-  //   width: "100%",
-  //   height: "50vh",
-  //   latitude: 37.7577,
-  //   longitude: -122.4376,
-  //   zoom: 8,
-  // });
 
   useEffect(() => {
     const success = (pos) => {
@@ -40,6 +33,24 @@ const Map = () => {
     }
   };
 
+  const handleDragEnd = (e) => {
+    const array = [...markers];
+
+    const dragableElement = array.filter(
+      (marker) => marker.id === parseFloat(e.target.id)
+    )[0];
+    dragableElement.long = e.lngLat[0];
+    dragableElement.lat = e.lngLat[1];
+
+    const id = array.findIndex(
+      (marker) => marker.id === parseFloat(e.target.id)
+    );
+
+    array[id] = dragableElement;
+
+    setMarkers(array);
+  };
+
   return (
     <ReactMapGl
       className="map-container"
@@ -59,10 +70,12 @@ const Map = () => {
           key={marker.id}
           latitude={marker.lat}
           longitude={marker.long}
+          draggable={true}
+          onDragEnd={handleDragEnd}
         >
           <div className="marker">
             <h6 className="h6">{markers.indexOf(marker) + 1}</h6>
-            <i className="now-ui-icons location_pin"></i>
+            <i id={marker.id} className="now-ui-icons location_pin"></i>
           </div>
         </Marker>
       ))}
